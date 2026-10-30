@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--bg-text-color);
+}
+
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+:root{
+    --bg-color: black;
+    --bg-text-color: rgb(224, 223, 223);
+
+    /*padding variables*/
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --paddding-s:5px;
+    --paddding-m:10px;
+    --paddding-l:15px;
+    --paddding-xl:20px;
+    --paddding-xxl:30px;
+
+    /*border-radius variables*/
+
+    --border-radius-s: 5px;
+    --border-radius-m: 10px;
+    --border-radius-l: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-xxl: 30px;
+}
+
+nav{
+    padding: var(--nav-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: var(--border-radius-m) var(--border-radius-l);
+    color: var(--bg-text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius-m);
+    background-color: rgb(21, 20, 20);
+
+}
+
+section{
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: var(--paddding-xxl);
+}
+
+section .task-column{
+    flex-grow: 1;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    padding: var(--paddding-m);
+    flex-direction: column;
+    gap: var(--paddding-m);
+    border-radius: var(--border-radius-m);
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+section .task-column.hover-over{
+    border: 2px dashed var(--bg-text-color);
+    scale: 1.05;
+}
+
+section .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--paddding-s);
+    
+}
+
+section .task-column .task{
+    background-color: rgb(50, 50, 50);
+    padding: var(--paddding-m);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--paddding-s);
+    cursor: grab;
+
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--paddding-s) var(--paddding-m);
+    background-color: rgb(217, 62, 62);
+    border-radius: var(--border-radius-m);
+    border: none;
+    outline: none;
+    color: rgb(250, 243, 243);
+}
+
+.modal{
+    position: fixed;
+    height: 100vh;
+    width:100vw;
+    top: 0;
+    left : 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active{
+    display: flex;
+}
+
+.modal .center{
+    background-color:  rgb(34, 34, 34);
+    padding: var(--paddding-xxl);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--paddding-m);
+    z-index: 10;
+}
+
+.modal .center input, .modal .center textarea , .modal .center select{
+    background-color: rgb(50, 50, 50);
+    border: none;
+    outline: none;
+    color: var(--bg-text-color);
+    padding: var(--paddding-m);
+    border-radius: var(--border-radius-s);
+}
+
+.modal .center button{
+    background-color: rgb(21, 20, 20);
+    border: none;
+    outline: none;
+    color: var(--bg-text-color);
+    padding: var(--paddding-m);
+    border-radius: var(--border-radius-s);
+}
+
+.modal .bg{
+    position : absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(61 , 61 , 61 , 0.404);
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+
+
+
+
