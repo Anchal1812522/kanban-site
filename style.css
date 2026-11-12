@@ -74,6 +74,7 @@ section{
 
 section .task-column{
     flex-grow: 1;
+    width: 100%;
     background-color: rgb(34, 34, 34);
     display: flex;
     padding: var(--paddding-m);
